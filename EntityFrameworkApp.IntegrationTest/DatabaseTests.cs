@@ -71,7 +71,6 @@ public class DatabaseTests : IAsyncLifetime
             Description = "Opis",
             Password = "123",
             Username = "Januszxx",
-            Departments = new List<Department>(),
             Payments = new List<Payment>()
         };
         Context.Add(userToRemove);
