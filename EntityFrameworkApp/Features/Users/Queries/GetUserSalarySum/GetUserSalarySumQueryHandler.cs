@@ -17,7 +17,7 @@ public class GetUserSalarySumQueryHandler
         return await _context.Users
             .AsNoTracking()
             .Where(u => u.FirstName == query.FirstName &&
-            u.LastName == query.LastName)
+                u.LastName == query.LastName)
             .SelectMany(u => u.Payments)
             .Where(p => p.DateOfPayment.Year == query.Year)
             .SumAsync(p => p.Pay + p.Bonus, cancellationToken);

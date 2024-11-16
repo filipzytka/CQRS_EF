@@ -16,9 +16,9 @@ public class GetCompanyMonthlyTaxQueryHandler : IRequestHandler<GetCompanyMonthl
     public async Task<float> Handle(GetCompanyMonthlyTaxQuery query, CancellationToken cancellationToken)
     {
         return await _context.Payments
-        .AsNoTracking()
-        .Where(p => p.DateOfPayment.Month == query.Month && p.DateOfPayment.Year == query.Year)
-        .Select(p => (p.Pay + p.Bonus) * query.TaxPercentage / 100)
-        .SumAsync(cancellationToken);
+            .AsNoTracking()
+            .Where(p => p.DateOfPayment.Month == query.Month && p.DateOfPayment.Year == query.Year)
+            .Select(p => (p.Pay + p.Bonus) * query.TaxPercentage / 100)
+            .SumAsync(cancellationToken);
     }
 }

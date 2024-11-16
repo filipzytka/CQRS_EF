@@ -16,6 +16,6 @@ public class GetAllDepartmentsQueryHandler : IRequestHandler<GetAllDepartmentsQu
 
     public async Task<IEnumerable<Department>> Handle(GetAllDepartmentsQuery request, CancellationToken cancellationToken)
     {
-        return await _context.Departments.AsNoTracking().ToListAsync();
+        return await _context.Departments.AsNoTracking().ToListAsync(cancellationToken);
     }
 }
