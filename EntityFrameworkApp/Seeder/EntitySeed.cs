@@ -1,4 +1,3 @@
-using System;
 using EntityFrameworkApp.Entities;
 using Microsoft.EntityFrameworkCore;
 

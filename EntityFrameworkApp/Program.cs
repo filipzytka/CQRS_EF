@@ -27,3 +27,5 @@ app.RegisterDepartmentEndpoints();
 app.RegisterPaymentEndpoints();
 
 app.Run();
+
+public partial class Program { }

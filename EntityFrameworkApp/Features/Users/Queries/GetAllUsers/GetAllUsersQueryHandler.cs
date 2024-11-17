@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EntityFrameworkApp.Features.Users.Queries.GetAllUsers;
 
-public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, IEnumerable<User>>
+public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, ICollection<User>>
 {
     private readonly MyAppContext _context;
 
@@ -14,7 +14,7 @@ public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, IEnumer
         _context = context;
     }
 
-    public async Task<IEnumerable<User>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
+    public async Task<ICollection<User>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
     {
         return await _context.Users.AsNoTracking().ToListAsync(cancellationToken);
     }

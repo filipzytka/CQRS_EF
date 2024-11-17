@@ -1,10 +1,9 @@
 using EntityFrameworkApp.Contracts;
-using EntityFrameworkApp.Entities;
 using MediatR;
 
 namespace EntityFrameworkApp.Features.Users.Queries.GetAllUsersByColumn;
 
-public class GetAllUsersByColumnQuery : IRequest<IEnumerable<UserSortedByColumn>>
+public class GetAllUsersByColumnQuery : IRequest<ICollection<UserSortedByColumn>>
 {
     public string Column { get; } = string.Empty;
 

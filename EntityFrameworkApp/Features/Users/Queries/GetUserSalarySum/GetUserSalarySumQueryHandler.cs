@@ -1,9 +1,10 @@
 using EntityFrameworkApp.Context;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace EntityFrameworkApp.Users.Queries.GetUserSalarySum;
 
-public class GetUserSalarySumQueryHandler
+public class GetUserSalarySumQueryHandler : IRequestHandler<GetUserSalarySumQuery, float>
 {
     private readonly MyAppContext _context;
 

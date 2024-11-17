@@ -20,7 +20,7 @@ public class MyAppContext(DbContextOptions<MyAppContext> options) : DbContext(op
         builder.Entity<Payment>().HasKey(d => d.IdPayment);
 
         builder.Entity<UserDepartment>()
-       .HasKey(ud => new { ud.UserId, ud.DepartmentId });
+            .HasKey(ud => new { ud.UserId, ud.DepartmentId });
 
         builder.Entity<User>()
             .HasMany(u => u.UserDepartments)

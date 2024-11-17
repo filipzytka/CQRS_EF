@@ -3,4 +3,4 @@ using MediatR;
 
 namespace EntityFrameworkApp.Features.Users.Queries.GetAllUsers;
 
-public class GetAllUsersQuery : IRequest<IEnumerable<User>> { }
+public class GetAllUsersQuery : IRequest<ICollection<User>> { }

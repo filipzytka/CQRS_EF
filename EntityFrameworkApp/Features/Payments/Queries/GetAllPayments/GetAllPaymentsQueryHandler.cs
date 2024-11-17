@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EntityFrameworkApp.Features.Payments.Queries.GetAllPayments;
 
-public class GetAllPaymentsQueryHandler : IRequestHandler<GetAllPaymentsQuery, IEnumerable<Payment>>
+public class GetAllPaymentsQueryHandler : IRequestHandler<GetAllPaymentsQuery, ICollection<Payment>>
 {
     private readonly MyAppContext _context;
 
@@ -14,7 +14,7 @@ public class GetAllPaymentsQueryHandler : IRequestHandler<GetAllPaymentsQuery, I
         _context = context;
     }
 
-    public async Task<IEnumerable<Payment>> Handle(GetAllPaymentsQuery request, CancellationToken cancellationToken)
+    public async Task<ICollection<Payment>> Handle(GetAllPaymentsQuery request, CancellationToken cancellationToken)
     {
         return await _context.Payments.ToListAsync();
     }

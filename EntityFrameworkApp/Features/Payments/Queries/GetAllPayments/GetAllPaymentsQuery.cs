@@ -3,4 +3,4 @@ using MediatR;
 
 namespace EntityFrameworkApp.Features.Payments.Queries.GetAllPayments;
 
-public class GetAllPaymentsQuery : IRequest<IEnumerable<Payment>> { }
+public class GetAllPaymentsQuery : IRequest<ICollection<Payment>> { }
